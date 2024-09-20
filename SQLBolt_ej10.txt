@@ -1,0 +1,21 @@
+--- SQLBolt 
+--- SQL Lesson 10: Queries with aggregates (Pt.1)
+
+--- Ejercicio 1
+---- Find the longest time that an employee has been at the studio
+SELECT MAX(Years_employed)
+FROM Employees;
+
+--- Ejercicio 2
+---- For each role, find the average number of years employed by employees in that role
+SELECT AVG(Years_employed), Role
+FROM Employees
+GROUP BY Role;
+
+--- Ejercicio 3
+---- Find the total number of employee years worked in each building
+SELECT SUM(Years_employed), Building
+FROM Employees
+Group by Building;
+
+
