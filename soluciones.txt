@@ -1,0 +1,63 @@
+#######################################################################################################################################
+# Teoría
+
+1. 
+# b) Especifica el mensaje del commit directamente desde la línea de comandos.
+
+2. 
+#a) Como excepciones o casos avanzados que van más allá de las primeras tres formas normales.
+
+3. 
+#Primera formal noarmal
+
+4. 
+#El orden en el que se ejecutarían en el código de SQL, WHERE se ejecuta antes de un GROUP BY, si existiera y el HAVING después de un posible GROUP BY 
+
+5.
+#c) FROM -> WHERE -> SELECT -> ORDER BY
+
+# Práctica
+
+1.
+
+```SQL
+-- poner solución debajo de este mensaje
+SELECT AVG(edad) AS edad_promedio
+
+FROM alumnos
+
+WHERE apellido LIKE '%ez';
+
+```
+
+2.
+
+```SQL
+-- poner solución debajo de este mensaje
+SELECT nombre_materia, COUNT(expediente) AS num
+FROM alumnos
+
+INNER JOIN calificaciones
+	USING(expediente)
+
+WHERE edad > 20
+GROUP BY nombre_materia
+ORDER BY num DESC;
+
+```
+
+3.
+
+```SQL
+-- poner solución debajo de este mensaje
+SELECT nombre,apellido
+FROM alumnos
+
+INNER JOIN calificaciones
+	USING(expediente)
+
+WHERE nombre_materia = 'Matemáticas'
+ORDER BY calificacion DESC
+LIMIT 1 OFFSET 1
+
+```
